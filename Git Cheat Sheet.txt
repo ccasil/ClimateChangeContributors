@@ -1,0 +1,25 @@
+********************** PULLING AND MERGING *****************************
+
+git fetch
+git status
+git pull
+************************************************************************
+
+
+
+********************* COMMITTING AND PUSHING ***************************
+
+git fetch
+git status
+
+If you have files you created, they may not have been added to git, so
+you have to do this:
+
+git add --all
+
+Now, we commit:
+
+git commit -a -m "Description of what you've added/changed/removed"
+git push
+
+************************************************************************
