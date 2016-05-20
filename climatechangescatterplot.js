@@ -64,8 +64,7 @@ var label = svg.append("text")
     .text(1800);
 
 // Load the data.
-//d3.json("nations.json", function(nations) {
-  d3.csv("co2emissions.csv", function(nations) {
+d3.json("nations.json", function(nations) {
 
   // A bisector since many nation's data is sparsely-defined.
   var bisect = d3.bisector(function(d) { return d[0]; });
