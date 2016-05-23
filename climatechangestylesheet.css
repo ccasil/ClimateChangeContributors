@@ -6,7 +6,11 @@
 }
 
 text {
-  font: 10px sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.pagetext{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .dot {
@@ -37,3 +41,13 @@ text {
   pointer-events: all;
   cursor: ew-resize;
 }
+
+.selectbutton{
+    background-color: #87CEEB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
