@@ -24,7 +24,7 @@ var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Add the x-axis.
@@ -72,9 +72,29 @@ d3.csv("co2emissions.csv", function(d) {
   // Add a dot per nation. Initialize the data at 1800, and set the colors.
   var dot = svg.append("g")
       .attr("class", "dots")
-    .selectAll(".dot")
+      .selectAll(".dot")
+      
+      /*.on("mouseover", function(d) {
+          div.transition()
+               .duration(275)
+               .style("opacity", .9);
+          /*div.html(d["country"] + "<br/>" + "<br/>"
+                        + "Population: " + d["population"] + "<br/>"
+                        + "GDP: " + d["gdp"] + "<br/>"
+                        + "EPC: " + d["epc"] + "<br/>"
+                        + "Total: " + d["total"])
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          div.transition()
+               .duration(400)
+               .style("opacity", 0);
+      });
+    */
+  
       .data(interpolateData(1800))
-    .enter().append("circle")
+      .enter().append("circle")
       .attr("class", "dot")
       .style("fill", function(d) { return colorScale(color(d)); })
       .call(position)
