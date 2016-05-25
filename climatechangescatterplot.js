@@ -44,7 +44,8 @@ svg.append("text")
     .attr("text-anchor", "end")
     .attr("x", width)
     .attr("y", height - 6)
-    .text("income per capita, inflation-adjusted (dollars)");
+    //.text("income per capita, inflation-adjusted (dollars)");
+    .text("Population Growth (annual %)");
 
 // Add a y-axis label.
 svg.append("text")
@@ -53,7 +54,8 @@ svg.append("text")
     .attr("y", 6)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .text("life expectancy (years)");
+    //.text("life expectancy (years)");
+    .text("Electric Power Consumption (kWh per capita)");
 
 // Add the year label; the value is set on transition.
 var label = svg.append("text")
