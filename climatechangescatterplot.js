@@ -119,11 +119,11 @@ d3.json("nations.json", function(nations) {
         .on("mouseover", enableInteraction);
 
   // Start a transition that interpolates the data based on year.
-  svg.transition()
+  /*svg.transition()
       .duration(30000)
       .ease("linear")
       .tween("year", tweenYear)
-      .each("end", enableInteraction);
+      .each("end", enableInteraction);*/
 
   // Positions the dots based on data.
   function position(dot) {
