@@ -2,7 +2,8 @@
 function x(d) { return d.income; }
 function y(d) { return d.lifeExpectancy; }
 function radius(d) { return d.population; }
-function color(d) { return d.region; }
+//function color(d) { return d.region; }
+function color(d) { return d.name; }
 function key(d) { return d.name; }
 
 // Chart dimensions.
@@ -26,6 +27,10 @@ var svg = d3.select("#chart").append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var div = d3.select("#chart").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 // Add the x-axis.
 svg.append("g")
@@ -63,7 +68,8 @@ var label = svg.append("text")
     .attr("text-anchor", "end")
     .attr("y", height - 24)
     .attr("x", width)
-    .text(1800);
+    //.text(1800);
+    .text(1981);
 
 // Load the data.
 d3.json("nations.json", function(nations) {
@@ -71,41 +77,26 @@ d3.json("nations.json", function(nations) {
   // A bisector since many nation's data is sparsely-defined.
   var bisect = d3.bisector(function(d) { return d[0]; });
 
-  // Add a dot per nation. Initialize the data at 1800, and set the colors.
+  // Add a dot per nation. Initialize the data at 1981, and set the colors.
   var dot = svg.append("g")
       .attr("class", "dots")
       .selectAll(".dot")
-      
-      .on("mouseover", function(d) {
-          div.transition()
-               .duration(275)
-               .style("opacity", .9);
-         /* div.html(d["country"] + "<br/>" + "<br/>"
-                        + "Population: " + d["population"] + "<br/>"
-                        + "GDP: " + d["gdp"] + "<br/>"
-                        + "EPC: " + d["epc"] + "<br/>"
-                        + "Total: " + d["total"])
-               .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");*/
-      })
-      /*
-      .on("mouseout", function(d) {
-          div.transition()
-               .duration(400)
-               .style("opacity", 0);
-      });
-    */
-  
-      .data(interpolateData(1800))
+      .data(interpolateData(1981))
       .enter().append("circle")
       .attr("class", "dot")
       .style("fill", function(d) { return colorScale(color(d)); })
+      .on("mouseover", function(d){
+        div.transition()
+            .duration(275)
+            .style("opacity", .9);
+        div.html(d["name"] + "<br/>" + "<br/>"
+                + "Population: " + d["population"])
+            .style("left", (d3.event.pageX + 5) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+        
+      })
       .call(position)
       .sort(order);
-
-  // Add a title.
-  dot.append("title")
-      .text(function(d) { return d.name; });
 
   // Add an overlay for the year label.
   var box = label.node().getBBox();
@@ -124,6 +115,7 @@ d3.json("nations.json", function(nations) {
       .ease("linear")
       .tween("year", tweenYear)
       .each("end", enableInteraction);*/
+    
 
   // Positions the dots based on data.
   function position(dot) {
@@ -140,7 +132,7 @@ d3.json("nations.json", function(nations) {
   // After the transition finishes, you can mouseover to change the year.
   function enableInteraction() {
     var yearScale = d3.scale.linear()
-        .domain([1800, 2009])
+        .domain([1981, 2009])
         .range([box.x + 10, box.x + box.width - 10])
         .clamp(true);
 
@@ -169,7 +161,7 @@ d3.json("nations.json", function(nations) {
   // Tweens the entire chart by first tweening the year, and then the data.
   // For the interpolated data, the dots and label are redrawn.
   function tweenYear() {
-    var year = d3.interpolateNumber(1800, 2009);
+    var year = d3.interpolateNumber(1981, 2009);
     return function(t) { displayYear(year(t)); };
   }
 
