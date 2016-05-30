@@ -181,7 +181,7 @@ d3.json("nations.json", function(nations) {
     return nations.map(function(d) {
       return {
         name: d.name,
-        region: d.region,
+        //region: d.region,
         income: interpolateValues(d.income, year),
         population: interpolateValues(d.population, year),
         lifeExpectancy: interpolateValues(d.lifeExpectancy, year)
