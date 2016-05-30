@@ -15,7 +15,7 @@ var margin = {top: 19.5, right: 30.5, bottom: 30.5, left: 75.5},
 var xScale = d3.scale.log().domain([300, 1e5]).range([0, width]),
     yScale = d3.scale.linear().domain([10, 85]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
-    colorScale = d3.scale.category10();
+    colorScale = d3.scale.category20();
 
 // The x & y axes.
 var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d")),
