@@ -95,6 +95,11 @@ d3.json("nations.json", function(nations) {
             .style("top", (d3.event.pageY - 28) + "px");
         
       })
+      .on("mouseout", function(d) {
+          div.transition()
+               .duration(300)
+               .style("opacity", 0);
+      })
       .call(position)
       .sort(order);
 
