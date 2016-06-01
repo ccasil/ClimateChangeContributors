@@ -1,6 +1,6 @@
 // Various accessors that specify the four dimensions of data to visualize.
-function x(d) { return d.income; }
-function y(d) { return d.lifeExpectancy; }
+function x(d) { return d.growth; }
+function y(d) { return d.epc; }
 function radius(d) { return d.population; }
 //function color(d) { return d.region; }
 function color(d) { return d.name; }
@@ -12,8 +12,8 @@ var margin = {top: 19.5, right: 30.5, bottom: 30.5, left: 75.5},
     height =500 - margin.top - margin.bottom;
 
 // Various scales. These domains make assumptions of data, naturally.
-var xScale = d3.scale.log().domain([300, 1e5]).range([0, width]),
-    yScale = d3.scale.linear().domain([10, 85]).range([height, 0]),
+var xScale = d3.scale.log().domain([0.01, 3]).range([0, width]),
+    yScale = d3.scale.linear().domain([1000, 12000]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
     colorScale = d3.scale.category20();
 
@@ -137,7 +137,7 @@ d3.json("nations.json", function(nations) {
   // After the transition finishes, you can mouseover to change the year.
   function enableInteraction() {
     var yearScale = d3.scale.linear()
-        .domain([1981, 2009])
+        .domain([1981, 2011])
         .range([box.x + 10, box.x + box.width - 10])
         .clamp(true);
 
@@ -182,9 +182,9 @@ d3.json("nations.json", function(nations) {
       return {
         name: d.name,
         //region: d.region,
-        income: interpolateValues(d.income, year),
+        growth: interpolateValues(d.growth, year),
         population: interpolateValues(d.population, year),
-        lifeExpectancy: interpolateValues(d.lifeExpectancy, year)
+        epc: interpolateValues(d.epc, year)
       };
     });
   }
