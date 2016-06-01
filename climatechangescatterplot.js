@@ -13,13 +13,13 @@ var margin = {top: 19.5, right: 30.5, bottom: 30.5, left: 75.5},
 
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.log().domain([0.01, 3]).range([0, width]),
-    yScale = d3.scale.linear().domain([1000, 12000]).range([height, 0]),
+    yScale = d3.scale.linear().domain([0, 20000]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
     colorScale = d3.scale.category20();
 
 // The x & y axes.
-var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(12, d3.format(",d")),
-    yAxis = d3.svg.axis().scale(yScale).orient("left");
+var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(12, d3.format(",d")),
+    yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(25, d3.format(",d"));
 
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
