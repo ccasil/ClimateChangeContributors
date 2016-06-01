@@ -1,7 +1,7 @@
 @import url(../style.css?aea6f0a);
 
 #chart {
-  margin-left: -10px;
+  margin-left: -0px;
   height: 506px;
 }
 
@@ -28,12 +28,12 @@ text {
 }
 
 .year.label {
-  font: 500 196px "Helvetica Neue";
+  font: 500 100px "Cursive";
   fill: #ddd;
 }
 
 .year.label.active {
-  fill: #aaa;
+  fill: #ddd;
 }
 
 .overlay {
