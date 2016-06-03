@@ -7,7 +7,7 @@ function color(d) { return d.name; }
 function key(d) { return d.name; }
 
 // Chart dimensions.
-var margin = {top: 19.5, right: 30.5, bottom: 30.5, left: 75.5},
+var margin = {top: 19.5, right: 30.5, bottom: 50.5, left: 75.5},
     width = 960 - margin.right,
     height =500 - margin.top - margin.bottom;
 
