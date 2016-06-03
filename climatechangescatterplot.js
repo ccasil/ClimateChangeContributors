@@ -13,7 +13,7 @@ var margin = {top: 19.5, right: 30.5, bottom: 50.5, left: 75.5},
 
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.log().domain([0.01, 4]).range([0, width]),
-    yScale = d3.scale.linear().domain([0, 20000]).range([height, 0]),
+    yScale = d3.scale.linear().domain([0, 25000]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
     colorScale = d3.scale.category20();
 
