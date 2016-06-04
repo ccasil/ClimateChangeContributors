@@ -50,7 +50,7 @@ svg.append("text")
     .attr("x", width)
     .attr("y", height - 6)
     //.text("income per capita, inflation-adjusted (dollars)");
-    .text("Population Growth (annual %)");
+    .text("GDP per capita (USD)");
 
 // Add a y-axis label.
 svg.append("text")
