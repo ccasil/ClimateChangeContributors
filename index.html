@@ -30,15 +30,29 @@
 
     <!-- give area to display chart visual -->
     <p id="chart"></p>
-    
+  
+<div style="position:absolute; right:80px; top:425px;">    
+<div id="option1">
+    <input name="updateButton" 
+           type="button" 
+           value="Electric Power Consumption" 
+           onclick="updateData1()" />
+</div>
     <br>
-    <select class="selectbutton">
-        <option value="EPC">Population Growth (annual %) vs Electric Power Consumption (kWh per capita)</option>
-        <option value="FF">Fossil Fuel Energy Consumption (% total) vs CO2 Emissions</option>
-        <!--<option value="CO2">CO2 Emissions</option>-->
-        <!--<option value="PG">Population Growth</option>-->
-    </select>
+<div id="option2">
+    <input name="updateButton" 
+           type="button" 
+           value="Fossil Fuel Energy Consumption" 
+           onclick="updateData2()" />
+</div>
     <br>
+<div id="option3">
+    <input name="updateButton" 
+           type="button" 
+           value="CO2 Emissions" 
+           onclick="updateData3()" />
+</div>
+</div>
     
 <div class="pagetext"> 
  <h4>Created By: Curtis Liew, Cesar Kyle Casil, John Ta, and in collaboration with Suresh K. Lodha</h4>
