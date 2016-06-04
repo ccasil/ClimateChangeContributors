@@ -31,27 +31,30 @@
     <!-- give area to display chart visual -->
     <p id="chart"></p>
   
-<div style="position:absolute; right:100px; top:425px;">   
+<div id="outer">
+    <div class="inner">
 <div id="option1">
     <input name="updateButton" 
            type="button" 
            value="Electric Power Consumption" 
            onclick="updateData1()" />
 </div>
-    <br>
+</div>
+    <div class="inner">
 <div id="option2">
-    
     <input name="updateButton" 
            type="button" 
            value="Fossil Fuel Energy Consumption" 
            onclick="updateData2()" />
 </div>
-    <br>
+</div>
+    <div class="inner">
 <div id="option3">
     <input name="updateButton" 
            type="button" 
            value="CO2 Emissions" 
            onclick="updateData3()" />
+</div>
 </div>
 </div>
     
@@ -70,19 +73,20 @@
         <script type="text/javascript" src="climatechangescatterplot.js"></script> 
          <h4>Files Submitted:</h4>
             <ul>
-            <li>climatechangeindex.html</li>
+            <li>index.html</li>
             <li>climatechangestylesheet.css</li>
             <li>climatechangescatterplot.js</li>
             <li>electricpowerconsumptionpercapita.csv</li>
             <li>fossilfuelenergyconsumption.csv</li>
             <li>co2emissions.csv</li>
-            <li>populationgrowth.csv</li>
+            <li>nations.json</li>
             </ul>
             <h4>References:</h4>
-            <ul>Data:
-                <li><a href="http://www.stackoverflow.com">www.stackoverflow.com</a></li>
+        <ul><b>Data:</b>
+                <li><a href="http://www.noaa.gov/">National Oceanic and Atmospheric Administration (NOAA)</a></li>
+                <li><a href="http://www.worldbank.org/">The World Bank Group</a></li>
                 </ul>
-            <ul>Visual:
+        <ul><b>Visual:</b>
                 <li><a href="https://bost.ocks.org/mike/nations/">The Wealth & Health of Nations</a></li>
             </ul>
     </body>
