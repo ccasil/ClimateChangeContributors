@@ -89,8 +89,8 @@ d3.json("nations.json", function(nations) {
         div.transition()
             .duration(275)
             .style("opacity", .9);
-        div.html("Country: " + d["name"] + "<br>" + "<br>"
-                + "Population: " + d["population"])
+        div.html(d["name"] + "<br>" + "<br>"
+                + "Population: " + Math.round(d["population"]))
             .style("left", (d3.event.pageX + 5) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
         
