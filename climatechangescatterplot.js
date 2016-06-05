@@ -201,3 +201,96 @@ d3.json("nations.json", function(nations) {
     return a[1];
   }
 });
+
+
+
+
+
+// ** Update data section (Called from the onclick)
+function updateData1() {
+
+    // Get the data again
+    d3.json("nations,json", function(nations) {
+       	data.forEach(function(d) {
+	    	d.growth = d.growth;
+	    	d.epc = d.epc;
+	    });
+
+    	// Scale the range of the data again 
+    	x.domain(d3.extent(data, function(d) { return d.growth; }));
+	    y.domain([0, d3.max(data, function(d) { return d.epc; })]);
+
+    // Select the section we want to apply our changes to
+    var svg = d3.select("body").transition();
+
+    // Make the changes
+        svg.select(".dot")   // change the dots
+            .duration(750)
+            .attr("d", valueline(data));
+        svg.select(".x.axis") // change the x axis
+            .duration(750)
+            .call(xAxis);
+        svg.select(".y.axis") // change the y axis
+            .duration(750)
+            .call(yAxis);
+
+    });
+}
+function updateData2() {
+
+    // Get the data again
+    d3.json("nations,json", function(nations) {
+       	data.forEach(function(d) {
+	    	d.growth = d.growth;
+	    	d.fossil = d.fossil;
+	    });
+
+    	// Scale the range of the data again 
+    	x.domain(d3.extent(data, function(d) { return d.growth; }));
+	    y.domain([0, d3.max(data, function(d) { return d.fossil; })]);
+
+    // Select the section we want to apply our changes to
+    var svg = d3.select("body").transition();
+
+    // Make the changes
+        svg.select(".dot")   // change the dots
+            .duration(750)
+            .attr("d", valueline(data));
+        svg.select(".x.axis") // change the x axis
+            .duration(750)
+            .call(xAxis);
+        svg.select(".y.axis") // change the y axis
+            .duration(750)
+            .call(yAxis);
+
+    });
+}
+function updateData3() {
+
+    // Get the data again
+    d3.json("nations,json", function(nations) {
+       	data.forEach(function(d) {
+	    	d.growth = d.growth;
+	    	d.emissions = d.emissions;
+	    });
+
+    	// Scale the range of the data again 
+    	x.domain(d3.extent(data, function(d) { return d.growth; }));
+	    y.domain([0, d3.max(data, function(d) { return d.emissions; })]);
+
+    // Select the section we want to apply our changes to
+    var svg = d3.select("body").transition();
+
+    // Make the changes
+        svg.select(".dot")   // change the dots
+            .duration(750)
+            .attr("d", valueline(data));
+        svg.select(".x.axis") // change the x axis
+            .duration(750)
+            .call(xAxis);
+        svg.select(".y.axis") // change the y axis
+            .duration(750)
+            .call(yAxis);
+
+    });
+}
