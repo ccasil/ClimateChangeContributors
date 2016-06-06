@@ -69,7 +69,7 @@ var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
     .attr("y", height - 25)
-    .attr("x", width - 635)
+    .attr("x", width - 35)
     //.text(1800);
     .text(1981);
 
@@ -306,7 +306,7 @@ function updateData3() {
     svg.append("rect")
         .attr("x", width-300)
         //.attr("y", height-230)
-        .attr("y", height-190)
+        .attr("y", height-450)
         .attr("width", 220)
         .attr("height", 180)
         .attr("fill", "lightgrey")
@@ -316,49 +316,49 @@ function updateData3() {
         .attr("r", 10)
         .attr("cx", width-100)
         //.attr("cy", height-215)
-        .attr("cy", height-175)
+        .attr("cy", height-435)
         .style("fill", "#ffeda0");
     
     svg.append("circle")
         .attr("r", 10)
         .attr("cx", width-100)
         //.attr("cy", height-190)
-        .attr("cy", height-150)
+        .attr("cy", height-410)
         .style("fill", "#feb24c");
 
     svg.append("circle")
         .attr("r", 10)
         .attr("cx", width-100)
         //.attr("cy", height-120)
-        .attr("cy", height-125)
+        .attr("cy", height-385)
         .style("fill", "#f03b20");
 
     svg.append("circle")
         .attr("r", 10)
         .attr("cx", width-100)
         //.attr("cy", height-120)
-        .attr("cy", height-100)
+        .attr("cy", height-360)
         .style("fill", "#9ecae1");
 
     svg.append("circle")
         .attr("r", 10)
         .attr("cx", width-100)
         //.attr("cy", height-120)
-        .attr("cy", height-75)
+        .attr("cy", height-335)
         .style("fill", "#3182bd");
 
     svg.append("circle")
         .attr("r", 10)
         .attr("cx", width-100)
         //.attr("cy", height-120)
-        .attr("cy", height-50)
+        .attr("cy", height-310)
         .style("fill", "#bcbddc");
 
     svg.append("text")
         .attr("class", "label")
         .attr("x", width -150)
         //.attr("y", height-212)
-        .attr("y", height-175)
+        .attr("y", height-435)
         .style("text-anchor", "end")
         .text("Australia");
 
@@ -366,7 +366,7 @@ function updateData3() {
         .attr("class", "label")
         .attr("x", width -150)
         //.attr("y", height-187)
-        .attr("y", height-150)
+        .attr("y", height-410)
         .style("text-anchor", "end")
         .text("Europe");
 
@@ -374,7 +374,7 @@ function updateData3() {
         .attr("class", "label")
         .attr("x", width -150)
         //.attr("y", height-117)
-        .attr("y", height-125)
+        .attr("y", height-385)
         .style("text-anchor", "end")
         .text("Asia");
 
@@ -382,7 +382,7 @@ function updateData3() {
         .attr("class", "label")
         .attr("x", width -150)
         //.attr("y", height-117)
-        .attr("y", height-100)
+        .attr("y", height-360)
         .style("text-anchor", "end")
         .text("Africa");
 
@@ -390,7 +390,7 @@ function updateData3() {
         .attr("class", "label")
         .attr("x", width -150)
         //.attr("y", height-117)
-        .attr("y", height-75)
+        .attr("y", height-335)
         .style("text-anchor", "end")
         .text("North America");
 
@@ -398,7 +398,7 @@ function updateData3() {
         .attr("class", "label")
         .attr("x", width -150)
         //.attr("y", height-117)
-        .attr("y", height-50)
+        .attr("y", height-310)
         .style("text-anchor", "end")
         .text("South America");
 
@@ -406,7 +406,7 @@ function updateData3() {
         .attr("class", "label")
         .attr("x", width -175)
         //.attr("y", height-55)
-        .attr("y", height-25)
+        .attr("y", height-285)
         .style("text-anchor", "middle")
         .style("fill", "Green") 
         .attr("font-size", "12px")
