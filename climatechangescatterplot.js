@@ -16,7 +16,8 @@ var margin = {top: 19.5, right: 30.5, bottom: 50.5, left: 75.5},
 var xScale = d3.scale.log().domain([0.01, 4]).range([0, width]),
     yScale = d3.scale.linear().domain([0, 25000]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
-    colorScale = d3.scale.category20();
+    //colorScale = d3.scale.category20();
+    colorScale = d3.scale.ordinal().domain(["1", "2", "3"]).range(["#d84b2a", "#beccae", "#7aa25c"]);
 
 // The x & y axes.
 var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(12, d3.format(",d")),
