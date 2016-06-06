@@ -8,14 +8,14 @@ function color(d) { return d.name; }
 function key(d) { return d.name; }
 
 // Chart dimensions.
-var margin = {top: 19.5, right: 30.5, bottom: 50.5, left: 75.5},
+var margin = {top: 19.5, right: 30.5, bottom: 65.5, left: 75.5},
     width = 960 - margin.right,
     height =500 - margin.top - margin.bottom;
 
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.log().domain([100, 30000000]).range([0, width]),
     yScale = d3.scale.linear().domain([0, 25000]).range([height, 0]),
-    radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
+    radiusScale = d3.scale.sqrt().domain([0, 4e8]).range([0, 40]),
     //colorScale = d3.scale.category20();
     colorScale = d3.scale.ordinal().domain(["1", "2", "3", "4", "5", "6"]).range(["#ffeda0", "#feb24c", "#f03b20", "#9ecae1", "#3182bd", "#bcbddc" ]);
 
