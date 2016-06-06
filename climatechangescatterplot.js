@@ -1,6 +1,6 @@
 // Various accessors that specify the four dimensions of data to visualize.
-function x(d) { return d.growth; }
-//function x(d) { return d.gdp; }
+//function x(d) { return d.growth; }
+function x(d) { return d.gdp; }
 function y(d) { return d.epc; }
 function radius(d) { return d.population; }
 //function color(d) { return d.region; }
@@ -13,7 +13,7 @@ var margin = {top: 19.5, right: 30.5, bottom: 50.5, left: 75.5},
     height =500 - margin.top - margin.bottom;
 
 // Various scales. These domains make assumptions of data, naturally.
-var xScale = d3.scale.log().domain([0.01, 4]).range([0, width]),
+var xScale = d3.scale.log().domain([100, 30000000]).range([0, width]),
     yScale = d3.scale.linear().domain([0, 25000]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, 40]),
     //colorScale = d3.scale.category20();
@@ -93,7 +93,8 @@ d3.json("nations.json", function(nations) {
             .style("opacity", .9);
         div.html(d["name"] + "<br>" + "<br>"
                 + "Population: " + Math.round(d["population"]) + "<br>" + "<br>"
-                + "EPC: " + Math.round(d["epc"])
+                + "EPC: " + Math.round(d["epc"]) + "<br>" + "<br>"
+                + "GDP: " + Math.round(d["gdp"])
                 )
             .style("left", (d3.event.pageX + 5) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
@@ -186,8 +187,8 @@ d3.json("nations.json", function(nations) {
       return {
         name: d.name,
         //region: d.region,
-        growth: interpolateValues(d.growth, year),
-          //gdp: interpolateValues(d.gdp, year),
+        //growth: interpolateValues(d.growth, year),
+          gdp: interpolateValues(d.gdp, year),
         population: interpolateValues(d.population, year),
         epc: interpolateValues(d.epc, year)
       };
@@ -215,17 +216,17 @@ d3.json("nations.json", function(nations) {
 function updateData1() {
 
     // Get the data again
-    d3.json("nations,json", function(nations) {
-       	data.forEach(function(d) {
+    d3.json("nations.json", function(nations) {
+       	nations.forEach(function(d) {
 	    	d.growth = d.growth;
             //d.gdp = d.gdp;
-	    	d.epc = d.epc;
+	    	d.epc = +d.epc;
 	    });
 
     	// Scale the range of the data again 
-    	x.domain(d3.extent(data, function(d) { return d.growth; }));
+    	x.domain(d3.extent(nations, function(d) { return d.growth; }));
         //x.domain(d3.extent(data, function(d) { return d.gdp; }));
-	    y.domain([0, d3.max(data, function(d) { return d.epc; })]);
+	    y.domain([0, d3.max(nations, function(d) { return d.epc; })]);
 
     // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
@@ -233,11 +234,11 @@ function updateData1() {
     // Make the changes
         svg.select(".dot")   // change the dots
             .duration(750)
-            .attr("d", valueline(data));
+            .attr("d", valueline(nations));
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
-        svg.select(".y.axis") // change the y axis
+        svg.select(".yaxis") // change the y axis
             .duration(750)
             .call(yAxis);
 
@@ -246,15 +247,15 @@ function updateData1() {
 function updateData2() {
 
     // Get the data again
-    d3.json("nations,json", function(nations) {
-       	data.forEach(function(d) {
+    d3.json("nations.json", function(nations) {
+       	nations.forEach(function(d) {
 	    	d.growth = d.growth;
-	    	d.fossil = d.fossil;
+	    	d.fossil = +d.fossil;
 	    });
 
     	// Scale the range of the data again 
-    	x.domain(d3.extent(data, function(d) { return d.growth; }));
-	    y.domain([0, d3.max(data, function(d) { return d.fossil; })]);
+    	x.domain(d3.extent(nations, function(d) { return d.growth; }));
+	    y.domain([0, d3.max(nations, function(d) { return d.fossil; })]);
 
     // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
@@ -262,7 +263,7 @@ function updateData2() {
     // Make the changes
         svg.select(".dot")   // change the dots
             .duration(750)
-            .attr("d", valueline(data));
+            .attr("d", valueline(nations));
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
@@ -275,15 +276,15 @@ function updateData2() {
 function updateData3() {
 
     // Get the data again
-    d3.json("nations,json", function(nations) {
-       	data.forEach(function(d) {
+    d3.json("nations.json", function(error, nations) {
+       	nations.forEach(function(d) {
 	    	d.growth = d.growth;
-	    	d.emissions = d.emissions;
+	    	d.emissions = +d.emissions;
 	    });
 
     	// Scale the range of the data again 
-    	x.domain(d3.extent(data, function(d) { return d.growth; }));
-	    y.domain([0, d3.max(data, function(d) { return d.emissions; })]);
+    	x.domain(d3.extent(nations, function(d) { return d.growth; }));
+	    y.domain([0, d3.max(nations, function(d) { return d.emissions; })]);
 
     // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
@@ -291,7 +292,7 @@ function updateData3() {
     // Make the changes
         svg.select(".dot")   // change the dots
             .duration(750)
-            .attr("d", valueline(data));
+            .attr("d", valueline(nations));
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
