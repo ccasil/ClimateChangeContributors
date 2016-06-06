@@ -218,8 +218,8 @@ function updateData1() {
     // Get the data again
     d3.json("nations.json", function(nations) {
        	nations.forEach(function(d) {
-	    	d.growth = d.growth;
-            //d.gdp = d.gdp;
+	    	//d.growth = d.growth;
+            d.gdp = d.gdp;
 	    	d.epc = +d.epc;
 	    });
 
