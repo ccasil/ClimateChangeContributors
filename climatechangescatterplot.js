@@ -93,8 +93,8 @@ d3.json("nations.json", function(nations) {
             .style("opacity", .9);
         div.html(d["name"] + "<br>" + "<br>"
                 + "Population: " + Math.round(d["population"]) + "<br>" + "<br>"
-                + "EPC: " + Math.round(d["epc"]) + "<br>" + "<br>"
-                + "GDP: " + Math.round(d["gdp"])
+                + "EPC: " + Math.round(d["epc"]) + " kWh per capita" + "<br>" + "<br>"
+                + "GDP: " + Math.round(d["gdp"]) + " USD"
                 )
             .style("left", (d3.event.pageX + 5) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
