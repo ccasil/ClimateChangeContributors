@@ -25,6 +25,7 @@ text {
 
 .dot {
   stroke: #000;
+  opacity: 0.7;
 }
 
 .axis path, .axis line {
