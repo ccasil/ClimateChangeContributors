@@ -224,7 +224,7 @@ function updateData1() {
 	    });
 
     	// Scale the range of the data again 
-    	x.domain(d3.extent(nations, function(d) { return d.growth; }));
+    	x.domain(d3.extent(nations, function(d) { return d.gdp; }));
         //x.domain(d3.extent(data, function(d) { return d.gdp; }));
 	    y.domain([0, d3.max(nations, function(d) { return d.epc; })]);
 
@@ -249,12 +249,12 @@ function updateData2() {
     // Get the data again
     d3.json("nations.json", function(nations) {
        	nations.forEach(function(d) {
-	    	d.growth = d.growth;
+	    	d.gdp = d.gdp;
 	    	d.fossil = +d.fossil;
 	    });
 
     	// Scale the range of the data again 
-    	x.domain(d3.extent(nations, function(d) { return d.growth; }));
+    	x.domain(d3.extent(nations, function(d) { return d.gdp; }));
 	    y.domain([0, d3.max(nations, function(d) { return d.fossil; })]);
 
     // Select the section we want to apply our changes to
@@ -278,12 +278,12 @@ function updateData3() {
     // Get the data again
     d3.json("nations.json", function(error, nations) {
        	nations.forEach(function(d) {
-	    	d.growth = d.growth;
+	    	d.gdp = d.gdp;
 	    	d.emissions = +d.emissions;
 	    });
 
     	// Scale the range of the data again 
-    	x.domain(d3.extent(nations, function(d) { return d.growth; }));
+    	x.domain(d3.extent(nations, function(d) { return d.gdp; }));
 	    y.domain([0, d3.max(nations, function(d) { return d.emissions; })]);
 
     // Select the section we want to apply our changes to
