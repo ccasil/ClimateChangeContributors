@@ -1,5 +1,6 @@
 // Various accessors that specify the four dimensions of data to visualize.
 function x(d) { return d.growth; }
+//function x(d) { return d.gdp; }
 function y(d) { return d.epc; }
 function radius(d) { return d.population; }
 //function color(d) { return d.region; }
@@ -185,6 +186,7 @@ d3.json("nations.json", function(nations) {
         name: d.name,
         //region: d.region,
         growth: interpolateValues(d.growth, year),
+          //gdp: interpolateValues(d.gdp, year),
         population: interpolateValues(d.population, year),
         epc: interpolateValues(d.epc, year)
       };
@@ -215,11 +217,13 @@ function updateData1() {
     d3.json("nations,json", function(nations) {
        	data.forEach(function(d) {
 	    	d.growth = d.growth;
+            //d.gdp = d.gdp;
 	    	d.epc = d.epc;
 	    });
 
     	// Scale the range of the data again 
     	x.domain(d3.extent(data, function(d) { return d.growth; }));
+        //x.domain(d3.extent(data, function(d) { return d.gdp; }));
 	    y.domain([0, d3.max(data, function(d) { return d.epc; })]);
 
     // Select the section we want to apply our changes to
