@@ -302,3 +302,112 @@ function updateData3() {
 
     });
 }
+     // draw legend colored rectangles
+    svg.append("rect")
+        .attr("x", width-300)
+        //.attr("y", height-230)
+        .attr("y", height-190)
+        .attr("width", 220)
+        .attr("height", 180)
+        .attr("fill", "lightgrey")
+        .style("stroke-size", "1px");
+
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", width-100)
+        //.attr("cy", height-215)
+        .attr("cy", height-175)
+        .style("fill", "#ffeda0");
+    
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", width-100)
+        //.attr("cy", height-190)
+        .attr("cy", height-150)
+        .style("fill", "#feb24c");
+
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", width-100)
+        //.attr("cy", height-120)
+        .attr("cy", height-125)
+        .style("fill", "#f03b20");
+
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", width-100)
+        //.attr("cy", height-120)
+        .attr("cy", height-100)
+        .style("fill", "#9ecae1");
+
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", width-100)
+        //.attr("cy", height-120)
+        .attr("cy", height-75)
+        .style("fill", "#3182bd");
+
+    svg.append("circle")
+        .attr("r", 10)
+        .attr("cx", width-100)
+        //.attr("cy", height-120)
+        .attr("cy", height-50)
+        .style("fill", "#bcbddc");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -150)
+        //.attr("y", height-212)
+        .attr("y", height-175)
+        .style("text-anchor", "end")
+        .text("Australia");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -150)
+        //.attr("y", height-187)
+        .attr("y", height-150)
+        .style("text-anchor", "end")
+        .text("Europe");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -150)
+        //.attr("y", height-117)
+        .attr("y", height-125)
+        .style("text-anchor", "end")
+        .text("Asia");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -150)
+        //.attr("y", height-117)
+        .attr("y", height-100)
+        .style("text-anchor", "end")
+        .text("Africa");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -150)
+        //.attr("y", height-117)
+        .attr("y", height-75)
+        .style("text-anchor", "end")
+        .text("North America");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -150)
+        //.attr("y", height-117)
+        .attr("y", height-50)
+        .style("text-anchor", "end")
+        .text("South America");
+
+     svg.append("text")
+        .attr("class", "label")
+        .attr("x", width -175)
+        //.attr("y", height-55)
+        .attr("y", height-25)
+        .style("text-anchor", "middle")
+        .style("fill", "Green") 
+        .attr("font-size", "12px")
+        .text("Dot Size = Population");
