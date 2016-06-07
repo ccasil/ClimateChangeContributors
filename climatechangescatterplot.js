@@ -308,7 +308,7 @@ function updateData3() {
         //.attr("y", height-230)
         .attr("y", height-400)
         .attr("width", 220)
-        .attr("height", 180)
+        .attr("height", 150)
         .attr("fill", "lightgrey")
         .style("stroke-size", "1px");
 
@@ -402,12 +402,58 @@ function updateData3() {
         .style("text-anchor", "end")
         .text("South America");
 
-     svg.append("text")
+//legend for population size
+     // draw legend colored rectangles
+    svg.append("rect")
+        .attr("x", 25)
+        //.attr("y", height-230)
+        .attr("y", 10)
+        .attr("width", 260)
+        .attr("height", 175)
+        .attr("fill", "lightgrey")
+        .style("stroke-size", "1px");
+
+    svg.append("circle")
+        .attr("r", 5)
+        .attr("cx", 225)
+        //.attr("cy", height-215)
+        .attr("cy", 175)
+        .style("fill", "white");
+    
+    svg.append("circle")
+        .attr("r", 15.8)
+        .attr("cx", 225)
+        //.attr("cy", height-190)
+        .attr("cy", 150)
+        .style("fill", "white");
+
+    svg.append("circle")
+        .attr("r", 50)
+        .attr("cx", 225)
+        //.attr("cy", height-120)
+        .attr("cy", 80)
+        .style("fill", "white");
+
+    svg.append("text")
         .attr("class", "label")
-        .attr("x", width -175)
-        //.attr("y", height-55)
-        .attr("y", height-235)
-        .style("text-anchor", "middle")
-        .style("fill", "Green") 
-        .attr("font-size", "12px")
-        .text("Dot Size = Population");
+        .attr("x", 160)
+        //.attr("y", height-212)
+        .attr("y", 170)
+        .style("text-anchor", "end")
+        .text("6 Million People");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", 160)
+        //.attr("y", height-187)
+        .attr("y", 147)
+        .style("text-anchor", "end")
+        .text("60 Million People");
+
+    svg.append("text")
+        .attr("class", "label")
+        .attr("x", 160)
+        //.attr("y", height-117)
+        .attr("y", 77)
+        .style("text-anchor", "end")
+        .text("600 Million People");
