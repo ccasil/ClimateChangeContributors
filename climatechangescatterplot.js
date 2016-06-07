@@ -17,7 +17,7 @@ var xScale = d3.scale.linear().domain([100, 120000]).range([0, width]),
     yScale = d3.scale.linear().domain([0, 30000]).range([height, 0]),
     radiusScale = d3.scale.sqrt().domain([0, 4e8]).range([0, 40]),
     //colorScale = d3.scale.category20();
-    colorScale = d3.scale.ordinal().domain(["1", "2", "3", "4", "5", "6"]).range(["#ffeda0", "#feb24c", "#f03b20", "#9ecae1", "#3182bd", "#bcbddc" ]);
+    colorScale = d3.scale.ordinal().domain(["1", "2", "3", "4", "5", "6"]).range(["#ffeda0", "#feb24c", "#f03b20", "#9ecae1", "#3182bd", "#61FF33" ]);
 
 // The x & y axes.
 var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(6, d3.format(",d")),
@@ -352,7 +352,7 @@ function updateData3() {
         .attr("cx", width-100)
         //.attr("cy", height-120)
         .attr("cy", height-265)
-        .style("fill", "#bcbddc");
+        .style("fill", "#61FF33");
 
     svg.append("text")
         .attr("class", "label")
